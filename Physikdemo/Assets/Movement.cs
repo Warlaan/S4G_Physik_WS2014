@@ -32,6 +32,11 @@ public class Movement : MonoBehaviour
 	// wird bei einer Kollision aufgerufen
 	void OnCollisionEnter(Collision collision)
 	{
+		OnCollisionWithWall(collision);
+	}
+
+	void OnCollisionWithWall(Collision collision)
+	{
 		// Setze neue Geschwindigkeit, die in x- und z-Richtung unverändert
 		// ist und in y-Richtung reflektiert wurde.
 		velocity = new Vector3(velocity.x, -velocity.y * bounciness, velocity.z);
