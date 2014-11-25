@@ -28,8 +28,9 @@ public class Movement : MonoBehaviour
 	// wird bei einer Kollision aufgerufen
 	void OnCollisionEnter(Collision collision)
 	{
-		Debug.Log("Kollision hat stattgefunden!");
-		Debug.Log(collision);
+		// Setze neue Geschwindigkeit, die in x- und z-Richtung unverändert
+		// ist und in y-Richtung reflektiert wurde.
+		velocity = new Vector3(velocity.x, -velocity.y, velocity.z);
 	}
 }
 
