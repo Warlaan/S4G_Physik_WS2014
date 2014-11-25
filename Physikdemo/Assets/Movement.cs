@@ -24,5 +24,12 @@ public class Movement : MonoBehaviour
 		// Translate = Bewege um ...
 		this.transform.Translate(posDiff);
 	}
+
+	// wird bei einer Kollision aufgerufen
+	void OnCollisionEnter(Collision collision)
+	{
+		Debug.Log("Kollision hat stattgefunden!");
+		Debug.Log(collision);
+	}
 }
 
