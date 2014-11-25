@@ -9,6 +9,10 @@ public class Movement : MonoBehaviour
 	// Geschwindigkeit in x-, y- und z-Richtung
 	private Vector3 velocity;
 
+	// Wie stark das Objekt bei einer Kollision reflektiert wird.
+	// 1 = elastischer Stoß, 0 = unelastischer Stoß
+	public float bounciness = 0.9f;
+
 	// Update is called once per frame
 	void FixedUpdate()
 	{
@@ -30,7 +34,7 @@ public class Movement : MonoBehaviour
 	{
 		// Setze neue Geschwindigkeit, die in x- und z-Richtung unverändert
 		// ist und in y-Richtung reflektiert wurde.
-		velocity = new Vector3(velocity.x, -velocity.y, velocity.z);
+		velocity = new Vector3(velocity.x, -velocity.y * bounciness, velocity.z);
 	}
 }
 
